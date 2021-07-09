@@ -15,3 +15,7 @@ docker-compose up -d --build
 ```
 docker-compose run api rails db:create
 ```
+
+```
+docker-compose run api rails db:migrate
+```

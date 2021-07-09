@@ -10,9 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2021_07_08_171121) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "orders", force: :cascade do |t|
+    t.string "paymentMethod"
+    t.decimal "subtotal"
+    t.decimal "salesTax"
+    t.decimal "total"
+    t.integer "order_type", default: 0
+    t.integer "order_status", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "password_digest"
+    t.string "firstName"
+    t.string "lastName"
+    t.string "email"
+    t.string "phone"
+    t.string "dob"
+    t.string "picture"
+    t.string "emergencyContactName"
+    t.string "emergencyContactPhone"
+    t.decimal "hourlyRate"
+    t.decimal "salaryRate"
+    t.float "payableSickTime"
+    t.float "payableTimeOff"
+    t.integer "employee_status", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
 end
