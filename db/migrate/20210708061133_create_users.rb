@@ -14,9 +14,9 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.decimal :salaryRate
       t.float :payableSickTime
       t.float :payableTimeOff
-      
+
       t.integer :employee_status, default: 0
-      
+
       t.timestamps
     end
   end
